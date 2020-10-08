@@ -1,16 +1,26 @@
- import React,{Fragment} from 'react';
- import Hello from './Hello';
+ import React, { useState } from 'react';
+ import Parent from './Parent';
+ import CounterContext from './CounterContext';
 
 
-function App({name,age}) {
-  return <div>
-      
-<h1>Hello {name} your age is {age}</h1>
-      <br/>
-     <Hello firstname={name} ></Hello> 
-      
-      
-     </div>
-}
+ const App = () => {
+
+  let  Counter  = useState(1);
+
+
+ 	return (
+
+
+  <CounterContext.Provider value={Counter}>
+   <div>
+
+     <Parent />
+
+   </div>
+   </CounterContext.Provider>
+   )
+
+ }
+
 
 export default App;
